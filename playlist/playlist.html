@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .shellBox :nth-child(1) {
+            background-color: #fafafa;
+            font-size: 15px;
+            font-weight: 600;
+            color: #313131;
+        }
+
+        .indexTop {
+            width: 100%;
+            height: 50px;
+            background-color: beige;
+        }
+
+        .index {
+            float: left;
+            margin: 15px;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        .indexTop :nth-child(2) {
+            color: #313131;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 13px;
+            margin-right: 20px;
+            margin-left: 20px;
+            border-bottom: 2px solid #ec4141;
+        }
+
+        /* 主界面 */
+        .rightMain {
+            background-color: aliceblue;
+            margin: 0 auto;
+            width: 700px;
+            height: 1300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 分类索引 */
+        .gedanTitle {
+            background-color: #fff;
+            width: 100%;
+            height: 50px;
+        }
+
+        #leiBtn {
+            border: 1px solid #e0e0e0;
+            float: left;
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            margin: 10px;
+            margin-left: 0;
+            text-align: center;
+            line-height: 30px;
+            letter-spacing: 0.1em;
+        }
+
+        #leiBtn:hover {
+            background-color: #f6f6f7;
+        }
+
+        .leiBox {
+            background-color: #fff;
+            height: 30px;
+            width: 460px;
+            height: 30px;
+            float: right;
+            margin: 10px;
+            margin-right: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .lei {
+            border-radius: 10px;
+            margin-top: 10px;
+            height: 20px;
+            padding: 5px;
+            align-items: center;
+            padding-top: 0;
+        }
+
+        .lei:hover {
+            background-color: #fef5f5;
+            color: #ec4141;
+        }
+
+        /* 歌单 */
+        .gedanBox {
+            width: 100%;
+            height: 1300px;
+            background-color: beige;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .geDan {
+            height: 220px;
+            width: 160px;
+            background-color: aliceblue;
+            position: relative;
+        }
+
+        .geDan>img {
+            width: 160px;
+            height: 160px;
+        }
+
+        .boFang {
+            background-color: #e33e3e;
+            position: absolute;
+            width: 50px;
+            left: 110px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* 底部分页 */
+        .gedanBtnBox {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .gedanBtn {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #e33e3e;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <img src="./images/header.png" id="logoImg">
+            <div class="searchBox">
+                <a href="" id="searchLogo"><img src="./images/searchlogo.png"></a>
+                <input type="text" placeholder="" id="searchInput">
+                <div class="clearfix"></div><!-- 清除浮动 -->
+            </div>
+            <div class="idBox">
+                <a href="./2-个人详情页.html" id="touXiang"><img src="./images/头像.JPG"></a>
+                <div id="niCheng">anchen</div>
+            </div>
+            <div class="clearfix"></div><!-- 清除浮动 -->
+        </div>
+
+        <!-- 主页面 -->
+        <div class="main">
+            <!-- 左导航 -->
+            <div class="left">
+                <div class="shellBox">
+                    <a href="#" class="shell">发现音乐</a>
+                    <a href="#" class="shell"><img src="./images/love.png" id="love" alt="">我喜欢的音乐</a>
+                    <a href="#" class="shell"><img src="./images/music.png" id="music">歌单1</a>
+                </div>
+            </div>
+
+            <!-- 右页面 -->
+            <div class="right">
+                <!-- 搜索 -->
+                <div id="searchPage">
+                    <div id="resou">热搜榜</div>
+                    <a href="#" class="theSong">1-666</a>
+                </div>
+                <!-- 个人 -->
+                <div id="meBox">
+
+                </div>
+                <div class="indexTop">
+                    <a href="./1-首页-个性推荐.html" class="index">个性推荐</a>
+                    <a href="./1.1-歌单广场.html" class="index">歌单</a>
+                    <a href="./1.2-排行榜.html" class="index">排行榜</a>
+                    <a href="./1.3最新音乐.html" class="index">最新音乐</a>
+                    <div class="clearfix"></div><!-- 清除浮动 -->
+                </div>
+
+                <!-- 主界面 -->
+                <!--  -->
+                <div class="rightMain">
+                    <div class="gedanTitle">
+                        <div id="leiBtn">流行&gt</div>
+                        <div class="leiBox">
+                            <div class="lei">华语</div>
+                            <div class="lei">流行</div>
+                            <div class="lei">摇滚</div>
+                            <div class="lei">民谣</div>
+                            <div class="lei">电子</div>
+                            <div class="lei">另类/独立</div>
+                            <div class="lei">轻音乐</div>
+                            <div class="lei">综艺</div>
+                            <div class="lei">影视原声</div>
+                            <div class="lei">ACG</div>
+                        </div>
+                    </div>
+                    <div class="gedanBox">
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                        <div class="geDan">
+                            <div class="boFang">播放量</div>
+                            <img class="gedanImg" src="./images/index3.png" alt="">
+                            <div class="geP">推文</div>
+                        </div>
+                    </div>
+                    <div class="gedanBtnBox">
+                        <div class="gedanBtn">&lt</div>
+                        <div class="gedanBtn">&gt</div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div><!-- 清除浮动 -->
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <!-- 底部左 -->
+            <div class="foot-left">
+                <a href="./1.4-歌单详情.html" class="geImg"><img src="./images/index1.png"></a>
+                <div id="imf">
+                    <div id="geMing">歌名</div>
+                    <div class="geShou">歌手</div>
+                </div>
+                <div class="clearfix"></div><!-- 清除浮动 -->
+            </div>
+            <!-- 底部中 -->
+            <div class="foot-center">
+                <div class="playBox">
+                    <img src="./images/past.png" id="pastBtn">
+                    <img src="./images/start.png" id="playBtn">
+                    <img src="./images/next.png" id="nextBtn">
+                </div>
+                <div class="jinDuBox">
+                    <div class="timeNow">03:01</div>
+                    <div class="jindutiao"></div>
+                    <div class="timeAll">04:00</div>
+                </div>
+            </div>
+            <!-- 底部右-->
+            <div class="foot-right">
+                <a class="labaBox" href="#"><img src="./images/laba.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+/* 确定页面总大小 */
+.container {
+    width: 930px;
+    margin: 0 auto;
+    background-color: #e0e0e0;
+    box-shadow: #e0e0e0 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 清除固定样式 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 内外边距清零 */
+    box-sizing: border-box;
+    /* css3盒子模型 */
+}
+
+a {
+    display: block;
+}
+
+em,
+i {
+    font-style: normal;
+    /* 去除斜体 */
+}
+
+li {
+    list-style: none;
+    /* 去li圆点 */
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+    /* 去除边框，取消图片底侧空白缝隙 */
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", san-serif;
+    border: 0;
+}
+
+input {
+    outline: none;
+    color: #fff;
+}
+
+body {
+    background-color: #fff;
+    color: #666;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", san-serif;
+}
+
+.hide,
+none {
+    display: none;
+    /* 隐藏元素 */
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+    /* 伪元素清除浮动 */
+}
+
+*::-webkit-scrollbar {
+    width: 0 !important
+}
+
+/* 隐藏滚动条 */

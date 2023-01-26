@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐</title>
+</head>
+
+<body>
+    <div>编辑个人信息</div>
+    <form action="http:127.0.0.1:3000/user/update" method="get" name="imformation">
+        &nbsp&nbsp&nbsp&nbsp昵&nbsp<input type="text" maxlength="30"><br>
+        称：<br>
+        &nbsp&nbsp&nbsp&nbsp介&nbsp<textarea></textarea> <br>
+        绍：<br>
+        &nbsp&nbsp&nbsp&nbsp性&nbsp<input type="radio" name="gender" checked="checked">&nbsp男<input type="radio"
+            name="gender">&nbsp女<br>
+        别：<br>
+        &nbsp&nbsp&nbsp&nbsp生&nbsp
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select><br>
+        日：<br>
+        &nbsp&nbsp&nbsp&nbsp地&nbsp
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select><br>
+        区：<br>
+        <input type="submit" value="确认"><input type="submit" value="取消">
+    </form>
+    <form action="http:127.0.0.1:3000/user/update" method="get" name="headImformation">
+        <input type="file" name="headPic" id="headPic" value="修改头像">
+    </form>
+</body>
+
+</html>

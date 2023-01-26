@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        /* 左导航 */
+        .shellBox :nth-child(1) {
+            background-color: #fafafa;
+            font-size: 15px;
+            font-weight: 600;
+            color: #313131;
+        }
+
+        /* 主界面 */
+        /* 顶部导航 */
+        .indexTop {
+            width: 100%;
+            height: 50px;
+            background-color: beige;
+        }
+
+        .index {
+            float: left;
+            margin: 15px;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        .indexTop :nth-child(1) {
+            color: #313131;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 13px;
+            margin-right: 20px;
+            margin-left: 20px;
+            border-bottom: 2px solid #ec4141;
+            ;
+        }
+
+        /* 轮播图 */
+        .cardBox {
+            background-color: antiquewhite;
+            height: 230px;
+        }
+
+        .card {
+            /* background-color: lightcyan; */
+            width: 683px;
+            height: 200px;
+            position: relative;
+            left: 30px;
+            top: 10px;
+        }
+
+        #cardLeft {
+            position: absolute;
+            top: 30px;
+        }
+
+        #cardCenter {
+            position: absolute;
+            left: 91.5px;
+            top: 10px;
+            z-index: 1;
+        }
+
+        #cardRight {
+            position: absolute;
+            top: 30px;
+            left: 283px;
+        }
+
+        #cardLeft>img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        #cardCenter>img {
+            width: 500px;
+            border-radius: 10px;
+        }
+
+        #cardRight>img {
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        .cardBtn {
+            height: 20px;
+            width: 40px;
+            float: right;
+        }
+
+        .cardBtn button {
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #ec4141;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .cardBtn button:hover {
+            background-color: #e33e3e;
+        }
+
+        /* 推荐歌单 */
+        #tuiTitle {
+            margin-left: 20px;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
+
+        .tuiBox {
+            background-color: pink;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tui {
+            width: 125px;
+            height: 150px;
+            margin-left: 20px;
+            margin-top: 20px;
+            background-color: lightcoral;
+            position: relative;
+        }
+
+        .tui>img {
+            width: 125px;
+            height: 125px;
+        }
+
+        .boFang {
+            background-color: #e33e3e;
+            position: absolute;
+            width: 50px;
+            left: 65px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* 最新音乐 */
+        #newTitle {
+            margin-left: 20px;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
+
+        .newBox {
+            margin: 0 auto;
+            background-color: lightblue;
+            width: 690px;
+            height: 222px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .new {
+            background-color: lightcyan;
+            width: 220px;
+            height: 45px;
+            margin: 5px;
+            overflow: hidden;
+        }
+
+        .newImg img {
+            width: 45px;
+            border-radius: 5px;
+        }
+
+        .newImg {
+            float: left;
+        }
+
+        .newText {
+            background-color: beige;
+            float: left;
+        }
+
+        .newSong {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <img src="./images/header.png" id="logoImg">
+            <div class="searchBox">
+                <a href="" id="searchLogo"><img src="./images/searchlogo.png"></a>
+                <input type="text" placeholder="" id="searchInput">
+                <div class="clearfix"></div><!-- 清除浮动 -->
+            </div>
+            <div class="idBox">
+                <a href="./2-个人详情页.html" id="touXiang"><img src="./images/头像.JPG"></a>
+                <div id="niCheng">anchen</div>
+            </div>
+            <div class="clearfix"></div><!-- 清除浮动 -->
+        </div>
+
+        <!-- 主页面 -->
+        <div class="main">
+            <!-- 左导航 -->
+            <div class="left">
+                <div class="shellBox">
+                    <a href="#" class="shell">发现音乐</a>
+                    <a href="#" class="shell"><img src="./images/love.png" id="love" alt="">我喜欢的音乐</a>
+                    <a href="#" class="shell"><img src="./images/music.png" id="music">歌单1</a>
+                </div>
+            </div>
+
+            <!-- 右页面 -->
+            <div class="right">
+                <!-- 搜索 -->
+                <div id="searchPage">
+                    <div id="resou">热搜榜</div>
+                    <a href="#" class="theSong">1-666</a>
+                </div>
+                <!-- 个人 -->
+                <div id="meBox">
+
+                </div>
+
+                <!-- 主界面 -->
+                <div class="indexTop">
+                    <a href="./1-首页-个性推荐.html" class="index">个性推荐</a>
+                    <a href="./1.1-歌单广场.html" class="index">歌单</a>
+                    <a href="./1.2-排行榜.html" class="index">排行榜</a>
+                    <a href="./1.3最新音乐.html" class="index">最新音乐</a>
+                    <div class="clearfix"></div><!-- 清除浮动 -->
+                </div>
+                <!-- 轮播图 -->
+                <div class="cardBox">
+                    <div class="card">
+                        <div id="cardLeft">
+                            <img src="./images/card1.png" alt="">
+                        </div>
+                        <div id="cardCenter">
+                            <img src="./images/card2.png" alt="">
+                        </div>
+                        <div id="cardRight">
+                            <img src="./images/card3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="cardBtn">
+                        <button>&lt</button>
+                        <button>&gt</button>
+                        <div class="clearfix"></div><!-- 清除浮动 -->
+                    </div>
+                    <div class="clearfix"></div><!-- 清除浮动 -->
+                </div>
+                <!-- 推荐歌单 -->
+                <div id="tuiTitle"><a href="./1.1-歌单广场.html">推荐歌单&gt</a></div>
+                <div class="tuiBox">
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+                    <div class="tui">
+                        <div class="boFang">播放量</div>
+                        <img src="./images/index1.png" class="tuiImg">
+                        <div class="tuiP">推文</div>
+                    </div>
+
+                </div>
+                <!-- 最新音乐 -->
+                <div id="newTitle"><a href="./1.3最新音乐.html">最新音乐&gt</a></div>
+                <div class="newBox">
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div class="newImg"><img src="./images/index2.png" alt=""></div>
+                        <div class="newText">
+                            <div class="newSong">
+                                歌名
+                            </div>
+                            <div class="newSinger">
+                                你好我是介绍(*^▽^*)y
+                            </div>
+                            <div class="clearfix"></div><!-- 清除浮动 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div><!-- 清除浮动 -->
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <!-- 底部左 -->
+            <div class="foot-left">
+                <a href="./1.4-歌单详情.html" class="geImg"><img src="./images/index1.png"></a>
+                <div id="imf">
+                    <div id="geMing">歌名</div>
+                    <div class="geShou">歌手</div>
+                </div>
+                <div class="clearfix"></div><!-- 清除浮动 -->
+            </div>
+            <!-- 底部中 -->
+            <div class="foot-center">
+                <div class="playBox">
+                    <img src="./images/past.png" id="pastBtn">
+                    <img src="./images/start.png" id="playBtn">
+                    <img src="./images/next.png" id="nextBtn">
+                </div>
+                <div class="jinDuBox">
+                    <div class="timeNow">03:01</div>
+                    <div class="jindutiao"></div>
+                    <div class="timeAll">04:00</div>
+                </div>
+            </div>
+            <!-- 底部右-->
+            <div class="foot-right">
+                <a class="labaBox" href="#"><img src="./images/laba.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
