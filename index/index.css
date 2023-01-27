@@ -1,0 +1,174 @@
+/* 左导航 */
+.shellBox :nth-child(1) {
+    background-color: #fafafa;
+    font-size: 15px;
+    font-weight: 600;
+    color: #313131;
+}
+
+/* 主界面 */
+/* 顶部导航 */
+.indexTop :nth-child(1) {
+    color: #313131;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 13px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-bottom: 2px solid #ec4141;
+}
+
+/* 轮播图 */
+.cardBox {
+    height: 230px;
+}
+
+.card {
+    /* background-color: lightcyan; */
+    width: 600px;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: cadetblue;
+    position: relative;
+}
+
+.card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.card.active {
+    z-index: 10;
+}
+
+.cardBtn {
+    height: 20px;
+    width: 40px;
+    float: right;
+    margin-right: 60px;
+}
+
+.cardBtn button {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.cardBtn button:hover {
+    background-color: #e33e3e;
+}
+
+.pointList {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 150px;
+    height: 20px;
+}
+
+.point {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    float: left;
+    margin-right: 10px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.point.active {
+    background-color: #ec4141;
+}
+
+/* 推荐歌单 */
+#tuiTitle {
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.tuiBox {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tui {
+    width: 125px;
+    height: 150px;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.tui>img {
+    width: 125px;
+    height: 125px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.boFang {
+    position: absolute;
+    width: 50px;
+    left: 65px;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* 最新音乐 */
+#newTitle {
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.newBox {
+    margin: 0 auto;
+    width: 690px;
+    height: 222px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.new {
+    width: 220px;
+    height: 45px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.newImg img {
+    width: 45px;
+    border-radius: 5px;
+}
+
+.newImg {
+    float: left;
+}
+
+.newText {
+    float: left;
+}
+
+.newSong {
+    font-size: 15px;
+}

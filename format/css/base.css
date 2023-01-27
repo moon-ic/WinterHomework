@@ -2,6 +2,7 @@
 .container {
     width: 930px;
     margin: 0 auto;
+    margin-top: 10px;
     background-color: #e0e0e0;
     box-shadow: #e0e0e0 0 0 10px;
     display: flex;
