@@ -14,3 +14,68 @@
     margin-left: 20px;
     border-bottom: 2px solid #ec4141;
 }
+
+.newBox {
+    display: flex;
+    background-color: #fafafa;
+    width: 100%;
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 1px;
+}
+
+.newBox:hover {
+    background-color: #e0e0e0;
+}
+
+.num {
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 12px;
+    width: 30px;
+    color: #e0e0e0;
+}
+
+.img {
+    height: 65px;
+    margin-top: 10px;
+}
+
+.newBox img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.name {
+    font-size: 14px;
+    height: 70px;
+    line-height: 70px;
+    width: 270px;
+    margin-left: 15px;
+    overflow: hidden;
+}
+
+.singer {
+    color: #8d8d8d;
+    height: 70px;
+    line-height: 70px;
+    width: 130px;
+}
+
+.album {
+    color: #8d8d8d;
+    height: 70px;
+    line-height: 70px;
+    width: 170px;
+    overflow: hidden;
+}
+
+.time {
+    height: 70px;
+    line-height: 70px;
+
+}
