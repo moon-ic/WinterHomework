@@ -1,8 +1,13 @@
+function goTo(a) {
+    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
+}
 let leiBtn = document.querySelectorAll(".lei");
 let gedanImg = document.querySelectorAll(".gedanImg");
 let boFang = document.querySelectorAll(".boFang");
 let geP = document.querySelectorAll(".geP");
+let geDan = document.querySelectorAll(".geDan");
 let i = 0;
+let id = [];
 let Btn = document.querySelector("#leiBtn");
 
 function getplayListTag(i) {
@@ -19,6 +24,7 @@ function getplayListTag(i) {
                 }
                 leiBtn[i].classList.add("active");
                 for (let j = 0; j < 20; j++) {
+                    id[i] = json.playlists[j].id;
                     gedanImg[j].src = json.playlists[j].coverImgUrl;
                     geP[j].innerText = json.playlists[j].name;
                     boFang[j].innerText = ">" + json.playlists[j].playCount;
@@ -43,6 +49,9 @@ function init() {
     for (i = 0; i < 10; i++) {
         let tempgetplayListTag = getplayListTagFunction(i);
         leiBtn[i].addEventListener('click', tempgetplayListTag);
+    }
+    for (let m = 0; m < 20; m++) {
+        geDan[m].onclick = () => goTo(id[m]);
     }
 }
 
