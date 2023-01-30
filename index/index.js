@@ -1,9 +1,13 @@
+function goTo(a) {
+    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
+}
 //1——网络请求部分
 // 推荐歌单
+let tui = document.querySelectorAll(".tui");
 let tuiPic = document.querySelectorAll(".tuiImg");
 let boFang = document.querySelectorAll(".boFang");
 let tuiP = document.querySelectorAll(".tuiP");
-let i = 0;
+let id = [];
 function getPicList() {
     fetch("http://why.vin:2023/personalized?limit=10")
         //这里是将数据json字符串转为对象
@@ -12,7 +16,8 @@ function getPicList() {
             //判断网络请求返回的数据是否正确
             if (json.code === 200) {
                 //如果正确就调用显示数据的方法
-                for (i = 0; i < 10; i++) {
+                for (let i = 0; i < 10; i++) {
+                    id[i] = json.result[i].id;
                     tuiPic[i].src = json.result[i].picUrl;
                     boFang[i].innerText = ">" + json.result[i].playCount;
                     tuiP[i].innerText = json.result[i].name;
@@ -38,7 +43,7 @@ function getnewList() {
             //判断网络请求返回的数据是否正确
             if (json.code === 200) {
                 //如果正确就调用显示数据的方法
-                for (i = 0; i < 12; i++) {
+                for (let i = 0; i < 12; i++) {
                     newImg[i].src = json.result[i].picUrl;
                     newSong[i].innerText = json.result[i].name;
                     newSinger[i].innerText = json.result[i].song.artists[0].name;
@@ -75,7 +80,7 @@ function getBanner() {
             //判断网络请求返回的数据是否正确
             if (json.code === 200) {
                 //如果正确就调用显示数据的方法
-                for (i = 0; i < 7; i++) {
+                for (let i = 0; i < 7; i++) {
                     cardImg[i].src = json.banners[i].imageUrl;
                 }
             } else {
@@ -92,6 +97,9 @@ function init() {
     getPicList();
     getnewList();
     getBanner();
+    for (let i = 0; i < 10; i++) {
+        tui[i].onclick = () => goTo(id[i]);
+    }
 }
 init();
 
