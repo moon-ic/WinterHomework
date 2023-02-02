@@ -38,7 +38,7 @@
             <div class="left">
                 <div class="shellBox">
                     <a href="#" class="shell">发现音乐</a>
-                    <a href="#" class="shell"><img src="/images/love.png" id="love" alt="">我喜欢的音乐</a>
+                    <a href="#8" class="shell"><img src="/images/love.png" id="love" alt="">我喜欢的音乐</a>
                     <a href="#" class="shell"><img src="/images/music.png" id="music">歌单1</a>
                 </div>
             </div>
@@ -64,32 +64,40 @@
                     <div class="clearfix"></div><!-- 清除浮动 -->
                 </div>
                 <!-- 轮播图 -->
+                <!-- 轮播图思路参考见 https://blog.csdn.net/m0_50855872/article/details/113739931-->
                 <div class="cardBox">
-                    <div class="card">
-                        <img src="/images/card1.png" alt="">
-                        <img src="/images/card1.png" alt="">
-                        <img src="/images/card1.png" alt="">
-                        <img src="/images/card1.png" alt="">
-                        <img src="/images/card1.png" alt="">
-                        <img src="/images/card1.png" alt="">
-                        <img src="/images/card1.png" alt="">
-                    </div>
-                    <ul class="pointList">
-                        <li class="point active" data-index=0></li>
-                        <li class="point" data-index=1></li>
-                        <li class="point" data-index=2></li>
-                        <li class="point" data-index=3></li>
-                        <li class="point" data-index=4></li>
-                        <li class="point" data-index=5></li>
-                        <li class="point" data-index=6></li>
-                        <li class="point" data-index=7></li>
+                    <!-- 按钮 -->
+                    <a href="javascript:;" class="lefts">&lt</a>
+                    <a href="javascript:;" class="rights">&gt</a>
+                    <!-- 轮播图片 -->
+                    <ul class="imgs">
+                        <li class="one">
+                            <div><img src="/images/card1.png" alt=""></div>
+                        </li>
+                        <li class="two">
+                            <div><img src="/images/card2.png" alt=""></div>
+                        </li>
+                        <li class="three">
+                            <div><img src="/images/card3.png" alt=""></div>
+                        </li>
+                        <li class="four">
+                            <div><img src="/images/card1.png" alt="" class="rose"></div>
+                        </li>
+                        <li class="five">
+                            <div<img src="/images/card2.png" alt=""></a>
+                        </li>
+                        <li class="six">
+                            <div><img src="/images/card3.png" alt=""></div>
+                        </li>
                     </ul>
-                    <div class="cardBtn">
-                        <button id="btn_left">&lt</button>
-                        <button id="btn_right">&gt</button>
-                        <div class="clearfix"></div><!-- 清除浮动 -->
-                    </div>
-                    <div class="clearfix"></div><!-- 清除浮动 -->
+                    <ul class="list">
+                        <!-- 按钮 -->
+
+                    </ul>
+                    <!-- 空盒子，实现左右两侧图片点击效果 -->
+                    <div class="leftb"></div>
+                    <div class="rightb"></div>
+                    <!-- 左右按钮 -->
                 </div>
                 <!-- 推荐歌单 -->
                 <div id="tuiTitle"><a href="/playlist/playlist.html">推荐歌单&gt</a></div>
@@ -301,10 +309,10 @@
         <div class="footer">
             <!-- 底部左 -->
             <div class="foot-left">
-                <a href="/playlistDetails/playDetails.html" class="geImg"><img src="/images/index1.png"></a>
+                <div id="geImg"><img src="/images/index1.png"></div>
                 <div id="imf">
                     <div id="geMing">歌名</div>
-                    <div class="geShou">歌手</div>
+                    <div id="geShou">歌手</div>
                 </div>
                 <div class="clearfix"></div><!-- 清除浮动 -->
             </div>

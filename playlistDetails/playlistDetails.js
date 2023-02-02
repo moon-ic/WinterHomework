@@ -1,3 +1,6 @@
+function goTo(a) {
+    window.location.href = "/play/play.html?id=" + a;
+}
 // 展示歌曲方法
 let mainBox = document.querySelector(".songBox");
 function show() {
@@ -27,7 +30,6 @@ let m = 0;
 async function getplayList() {
     let data = await fetch("http://why.vin:2023/playlist/detail?id=" + id)
     let json = await data.json()
-    console.log(await json)
     if (json.code === 200) {
         //如果正确就调用显示数据的方法
         if (json.fromUsers != null) document.querySelector(".from").innerText = json.fromUsers;
@@ -80,5 +82,9 @@ async function GetSong(res) {
 async function init() {
     let res = await getplayList();
     GetSong(res);
+    for (let i = 0; i < m; i++) {
+        document.querySelectorAll(".song")[i].onclick = () => goTo(theSong[i]);
+    }
 }
+
 init();

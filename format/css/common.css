@@ -184,12 +184,12 @@
     height: 65px;
 }
 
-.geImg {
+#geImg {
     float: left;
     margin: 10px;
 }
 
-.geImg>img {
+#geImg>img {
     width: 45px;
     border-radius: 5px;
 }

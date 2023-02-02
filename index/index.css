@@ -20,73 +20,153 @@
 
 /* 轮播图 */
 .cardBox {
-    height: 230px;
-}
-
-.card {
-    /* background-color: lightcyan; */
-    width: 600px;
-    height: 200px;
-    display: flex;
     margin: 0 auto;
-    margin-top: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: cadetblue;
+    margin-top: 20px;
     position: relative;
+    width: 700px;
+    height: 210px;
 }
 
-.card img {
+.imgs img {
+    width: 490px;
+    height: 180px;
+}
+
+/* 给左右按钮设计样式，和定位 */
+.lefts {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: aliceblue;
+    font-size: 15px;
+    font-weight: 600;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #989898;
+    color: white;
+    /* 添加半透明 */
+    opacity: 0.3;
+    top: 80px;
+    left: 10px;
+    z-index: 999;
 }
 
-.card.active {
-    z-index: 10;
+.lefts:hover {
+    opacity: 0.7;
 }
 
-.cardBtn {
-    height: 20px;
-    width: 40px;
-    float: right;
-    margin-right: 60px;
+.rights:hover {
+    opacity: 0.7;
 }
 
-.cardBtn button {
+.rights {
+    position: absolute;
+    font-weight: 600;
+    font-size: 15px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #989898;
+    color: white;
+    /* 添加半透明 */
+    opacity: 0.3;
+    top: 80px;
+    right: 10px;
+    z-index: 999;
+}
+
+/* 图片盒子 */
+.imgs {
+    position: absolute;
+    left: 100px;
+    width: 500px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.imgs img {
+    width: 500px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+/* 让图片都叠在一起 */
+.imgs li {
+    position: absolute;
+    width: 500px;
+    transition: 0.5s;
+}
+
+/* 把图片错开 */
+.imgs .one {
+    transform: translateX(-120px) scale(0.9);
+    z-index: 1;
+}
+
+/* 第二张图片在中间，层级最高 */
+.imgs .two {
+    z-index: 2;
+}
+
+.imgs .three {
+    transform: translateX(120px) scale(0.9);
+    z-index: 1;
+}
+
+/* 刚开始不显示的图片就放在中间图片的下面 */
+.imgs .four {
+    transform: scale(0.9);
+}
+
+.imgs .five {
+    transform: scale(0.9);
+}
+
+.imgs .six {
+    transform: scale(0.9);
+}
+
+/* 圆圈 */
+.list {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 275px;
+    bottom: 0;
+}
+
+.list li {
     float: left;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: #e0e0e0;
-    color: #fff;
-    font-weight: 700;
-}
-
-.cardBtn button:hover {
-    background-color: #e33e3e;
-}
-
-.pointList {
-    margin: 0 auto;
-    margin-top: 10px;
-    width: 150px;
-    height: 20px;
-}
-
-.point {
     width: 5px;
     height: 5px;
-    border-radius: 100%;
-    float: left;
-    margin-right: 10px;
-    background-color: #e0e0e0;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    margin: 0 7px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
-.point.active {
+.list .change {
     background-color: #ec4141;
+}
+
+.leftb {
+    position: absolute;
+    left: 0;
+    height: 200px;
+    width: 100px;
+    z-index: 80;
+}
+
+.rightb {
+    position: absolute;
+    right: 0;
+    height: 200px;
+    width: 100px;
+    z-index: 80;
 }
 
 /* 推荐歌单 */
