@@ -1,6 +1,7 @@
 function goTo(a) {
     window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
 }
+
 let leiBtn = document.querySelectorAll(".lei");
 let gedanImg = document.querySelectorAll(".gedanImg");
 let boFang = document.querySelectorAll(".boFang");
@@ -18,13 +19,14 @@ function getplayListTag(i) {
             //判断网络请求返回的数据是否正确
             if (json.code === 200) {
                 //如果正确就调用显示数据的方法
+                // title部分
                 Btn.innerText = leiBtn[i].innerText + ">";
                 for (let q = 0; q < 10; q++) {
                     leiBtn[q].className = "lei";
                 }
                 leiBtn[i].classList.add("active");
+                // 歌单部分
                 for (let j = 0; j < 20; j++) {
-                    id[i] = json.playlists[j].id;
                     gedanImg[j].src = json.playlists[j].coverImgUrl;
                     geP[j].innerText = json.playlists[j].name;
                     boFang[j].innerText = ">" + json.playlists[j].playCount;
@@ -38,8 +40,22 @@ function getplayListTag(i) {
             console.log("请求失败")
         })
 }
+async function getId(i) {
+    let data = await fetch("http://why.vin:2023/top/playlist?limit=20&cat=" + leiBtn[i].innerText)
+    let json = await data.json()
+    if (json.code === 200) {
+        // 歌单部分
+        for (let j = 0; j < 20; j++) {
+            id[j] = json.playlists[j].id;
+        }
+    } else {
+        console.log("请求错误" + json.code);
+    }
+    return { id }
+}
 function getplayListTagFunction(i) {
     return () => {
+        getId(i)
         getplayListTag(i)
     }
 }
@@ -49,9 +65,12 @@ function init() {
     for (i = 0; i < 10; i++) {
         let tempgetplayListTag = getplayListTagFunction(i);
         leiBtn[i].addEventListener('click', tempgetplayListTag);
-    }
-    for (let m = 0; m < 20; m++) {
-        geDan[m].onclick = () => goTo(id[m]);
+        let res = getId(i)
+        for (let j = 0; j < 20; j++) {
+            document.querySelectorAll(".geDan")[j].onclick = () => {
+                goTo(id[j]);
+            }
+        }
     }
 }
 

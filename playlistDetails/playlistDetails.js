@@ -1,6 +1,14 @@
+// 跳转
 function goTo(a) {
     window.location.href = "/play/play.html?id=" + a;
 }
+function goToCom(a) {
+    window.location.href = "/playlistDetailComment/playDetailsComment.html?id=" + a;
+}
+function goToList(a) {
+    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
+}
+
 // 展示歌曲方法
 let mainBox = document.querySelector(".songBox");
 function show() {
@@ -39,8 +47,6 @@ async function getplayList() {
         document.querySelector(".count").innerText = "播放： " + json.playlist.playCount;
         document.querySelector(".songCount").innerText = "歌曲： " + json.playlist.trackIds.length;
         m = json.playlist.trackIds.length;
-        console.log("m:" + m + "\n");
-        console.log(json);
         document.querySelector(".des").innerText = json.playlist.description;
         // songBox
         for (let i = 1; i < json.playlist.trackIds.length; i++) {
@@ -82,8 +88,16 @@ async function GetSong(res) {
 async function init() {
     let res = await getplayList();
     GetSong(res);
+    // 跳转
+    // 歌曲
     for (let i = 0; i < m; i++) {
         document.querySelectorAll(".song")[i].onclick = () => goTo(theSong[i]);
+    }
+    document.querySelector("#geIndex").onclick = () => {
+        goToList(id);
+    }
+    document.querySelector("#comment").onclick = () => {
+        goToCom(id);
     }
 }
 
