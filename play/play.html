@@ -37,6 +37,9 @@
                     </ul>
                 </div>
             </div>
+            <div class="volume">
+                <input id="volume" type="range" min="0" max="1" step="0.05" />
+            </div>
         </div>
 
         <!-- 底部 -->
@@ -59,7 +62,6 @@
             <div class="foot-center">
                 <!-- 按钮 -->
                 <div class="controls" id="controls">
-                    <span><i id="mode" class="iconfont icon-suiji"></i></span>
                     <div class="play">
                         <div><i id="pre" class="iconfont icon-shangyishou"></i></div>
                         <div class="moddle"><i id="play" class="iconfont icon-24gf-play"></i></div>
@@ -68,7 +70,9 @@
                 </div>
                 <div class=" progress">
                     <div id="start">0:00</div>
-                    <div id="bar"></div>
+                    <div id="bar">
+                        <input id="jinDu" type="range" min="0" max="1" step="0.05" />
+                    </div>
                     <div id="end">04:00</div>
                 </div>
                 <section class="audio">

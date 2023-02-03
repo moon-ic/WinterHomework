@@ -54,7 +54,7 @@
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    animation: run 10s linear infinite ;
+    animation: run 10s linear infinite paused;
 }
 
 /* 自定义动画 */

@@ -66,6 +66,7 @@ function playSong(a) {
                 doc.querySelector("#geImg>img").src = json.songs[0].al.picUrl;
                 doc.querySelector("#geMing").innerHTML = json.songs[0].name;
                 doc.querySelector("#geShou").innerHTML = json.songs[0].ar[0].name;
+                doc.querySelector("#audio").src = "https://music.163.com/song/media/outer/url?id=" + a + ".mp3 ";
             } else {
                 console.log("请求错误" + json.code)
             }
@@ -76,23 +77,7 @@ function playSong(a) {
         })
 }
 
-// cd动画
-// box.onclick=function(){
-//     // 获取当前盒子的动画播放状态
-//     let status = box.style.animationPlayState
-//     console.log(status)
-//     if(status==''|| status==='paused'){//暂停状态
-//         // 运行动画
-//         box.style.animationPlayState = 'running'
-//         // 播放音乐
-//         mv.play()
-//     }else{
-//         // 暂停音乐和动画
-//         box.style.animationPlayState = 'paused'
-//         mv.pause()
-//     }
-// }
-
+//  footer播放
 // DOM元素
 const audio = doc.querySelector('#audio'); // 播放器
 const controls = doc.querySelector('#controls'); // 按钮区域
@@ -100,15 +85,154 @@ const title = doc.querySelector('#geMing'); // 歌曲标题
 const author = doc.querySelector('#geShou'); // 歌曲作者
 const playBtn = doc.querySelector('#play'); // 播放按钮
 const voiceBtn = doc.querySelector('#voice'); // 声音开关
+const box = doc.querySelector(".cdImg img ");
+// // 当前播放歌曲
+// let curSongIndex = 1;
+// 是否在播放
+let isPlay = false;
 
-// 初始化
+// 按钮事件
+controls.addEventListener('click', e => {
+    switch (e.target?.id) {
+        case 'list': // 歌曲列表
+            // TODO
+            break;
+        case 'voice': // 声音开关
+            voiceControl();
+            break;
+        case 'pre': // 上一首
+            preSong();
+            break;
+        case 'play': // 播放/暂停
+            togglePlay();
+            break;
+        case 'next': // 下一首
+            nextSong();
+            break;
+        case 'mode': // 播放模式
+            // TODO
+            break;
+        default:
+            break;
+    }
+});
+
+// 播放 / 暂停 切换
+function togglePlay() {
+    if (!isPlay) {
+        // 暂停 图标切换
+        songPlay();
+        box.style.animationPlayState = 'running'
+    } else {
+        // 播放 图标切换
+        songPause();
+        box.style.animationPlayState = 'paused'
+    }
+}
+
+// 播放
+function songPlay() {
+    isPlay = true;
+    playBtn.classList.remove('icon-24gf-play');
+    playBtn.classList.add('icon-iconstop');
+    audio.play();
+}
+
+// 暂停
+function songPause() {
+    isPlay = false;
+    playBtn.classList.remove('icon-iconstop');
+    playBtn.classList.add('icon-24gf-play');
+    audio.pause();
+}
+
+// 上一首
+function preSong() {
+    if (curSongIndex > 0) {
+        curSongIndex--;
+        render(songsList[curSongIndex]);
+        songPlay();
+    }
+}
+
+// 下一首
+function nextSong() {
+    if (curSongIndex < songsList.length - 1) {
+        curSongIndex++;
+        render(songsList[curSongIndex]);
+        songPlay();
+    }
+}
+
+// 声音控制
+function voiceControl() {
+    if (audio.volume > 0) {
+        voiceOff();
+    } else {
+        voiceOn();
+    }
+}
+
+// 声音开
+function voiceOn() {
+    audio.volume = 1;
+    voiceBtn.classList.remove('icon-volume-mute-fill');
+    voiceBtn.classList.add('icon-shengyin_shiti');
+}
+
+// 声音关
+function voiceOff() {
+    audio.volume = 0;
+    voiceBtn.classList.remove('icon-shengyin_shiti');
+    voiceBtn.classList.add('icon-volume-mute-fill');
+}
+
+// 时长
+function duration() {
+    if (audio.readyState > 0) {
+        var minutes1 = parseInt(audio.duration / 60, 10);
+        var seconds1 = parseInt(audio.duration % 60);
+        var minutes2 = parseInt(audio.duration / 60, 10);
+        var seconds2 = parseInt(audio.duration % 60);
+    }
+    //时间
+    doc.querySelector("#strat").innerText = minutes1 + ":" + seconds1;
+    doc.querySelector("#end").innerText = minutes2 + ":" + seconds2;
+    alert(minutes1 + ":" + seconds1);
+
+}
+
+//  全部初始化
 function init() {
+    // 网络请求
     getplayList(id);
     playSong(id);
     getLyrics(id);
-    document.querySelector(".back").onclick = () => {
+    // 返回
+    doc.querySelector(".back").onclick = () => {
         window.history.go(-1);
     }
+    // 音量键
+    doc.querySelector("#voice").onmouseover = () => {
+        doc.querySelector(".volume").style.zIndex = 1;
+    }
+    doc.querySelector("#volume").onmouseover = () => {
+        doc.querySelector(".volume").style.zIndex = 1;
+    }
+    doc.querySelector("#volume").onmouseout = () => {
+        doc.querySelector(".volume").style.zIndex = -1;
+    }
+    //设置音量大小
+    doc.querySelector("#volume").onchange = function () {
+        audio.volume = doc.querySelector("#volume").value;
+        if (audio.volume === 0) {
+            voiceOff();
+        }
+    }
+    doc.querySelector("#voice").onclick = () => {
+        voiceControl()
+    }
+
 }
 
 init();
