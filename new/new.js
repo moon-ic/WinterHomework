@@ -45,7 +45,7 @@ async function getNewList() {
 async function init() {
     const res = await getNewList();
     for (let i = 0; i < m; i++) {
-        document.querySelectorAll(".newBox")[i].onclick = () => goTo(theSong[i]);
+        document.querySelectorAll(".pic")[i].onclick = () => goTo(theSong[i]);
     }
 }
 

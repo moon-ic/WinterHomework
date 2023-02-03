@@ -52,7 +52,7 @@
 .song {
     height: 30px;
     margin-bottom: 1px;
-    background-color: lavender;
+    background-color: #fafafa;
     border-radius: 5px;
 }
 
@@ -63,7 +63,6 @@
     line-height: 30px;
     text-align: center;
     color: #989898;
-    background-color: lavenderblush;
 }
 
 .active {
@@ -75,7 +74,6 @@
     height: 30px;
     line-height: 30px;
     float: left;
-    background-color: lemonchiffon;
 }
 
 .singer {
@@ -83,7 +81,7 @@
     height: 30px;
     line-height: 30px;
     float: right;
-    background-color: lightcoral;
+    margin-right: 10px;
 }
 
 .songBtn {
