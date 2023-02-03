@@ -52,10 +52,21 @@
     top: 125px;
     width: 200px;
     height: 200px;
-    border-radius: 100%;
+    border-radius: 50%;
     overflow: hidden;
-    transform: rotate(360deg);
-    transition: all 1s;
+    animation: run 10s linear infinite ;
+}
+
+/* 自定义动画 */
+@keyframes run {
+    from {
+        /* 旋转效果 */
+        transform: rotateZ(0);
+    }
+
+    to {
+        transform: rotateZ(720deg);
+    }
 }
 
 /* 歌词 */

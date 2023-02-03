@@ -9,6 +9,7 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/format/css/footer.css">
     <link rel="stylesheet" href="/format/css/base.css">
+    <link rel="stylesheet" href="/icon/iconfont.css">
     <link rel="stylesheet" href="./play.css">
 </head>
 
@@ -16,7 +17,7 @@
     <div class="container">
         <!-- 主页面 -->
         <div class="main">
-            <!-- <div class="back"><</div> -->
+            <div class="back">&lt</div>
             <div class="playPage">
                 <div class="cdBox">
                     <div class="cd"></div>
@@ -24,53 +25,12 @@
                     <div class="cdImg"><img src="/images/index1.png" alt=""></div>
                 </div>
                 <div class="detailBox">
-                    <div class="name">ハレハレヤ（朗朗晴天）（Cover Flower）</div>
+                    <div class="name"></div>
                     <div class="details">
-                        <div class="singer">歌手: Hanser </div>
-                        <div class="album">专辑: Hanser唱的歌</div>
+                        <div class="singer"></div>
+                        <div class="album"></div>
                     </div>
                     <textarea class="lyrics" id="lrc_content" name="textfield" readonly>
-
-                        作曲 : 羽生迷子<br>
-
-                        夜の街迷いし穢れの乱歩<br>
-
-                        夜间街上 踌躇不定 不净地游走<br>
-
-                        何処から来たのよ見窄らしいね<br>
-
-                        你从哪里来 为何衣衫褴褛<br>
-
-                        ねぇうちにおいで温めてあげるよ<br>
-
-                        要不 去我家吧 我家暖和<br>
-
-                        今までよく頑張ったよね<br>
-
-                        坚持到现在真不容易<br>
-
-                        ここらで休んでみませんか<br>
-
-                        就在这里稍事休息吧<br>
-
-                        ゆっくり話をしませんか<br>
-
-                        不慌不忙地聊几句吧<br>
-
-                        とりあえず今夜は安心さ<br>
-
-                        今晚姑且算是有了着落<br>
-
-                        足跡は雪が消していた<br>
-
-                        雪把足迹掩埋在纯白中<br>
-
-                        声はひどく痛んだ<br>
-
-                        说话声中饱含沧桑<br>
-
-                        乾いた乾いた<br>
-
                     </textarea>
                     <ul id="text" style="overflow: hidden;">
 
@@ -82,6 +42,7 @@
         <!-- 底部 -->
         <div class="footer">
             <!-- 底部左 -->
+            <!-- 歌曲信息 -->
             <div class="foot-left">
                 <div id="geImg">
                     <div class="back">&lt</div>
@@ -94,21 +55,31 @@
                 <div class="clearfix"></div><!-- 清除浮动 -->
             </div>
             <!-- 底部中 -->
+            <!-- 播放盒子 -->
             <div class="foot-center">
-                <div class="playBox">
-                    <img src="/images/past.png" id="pastBtn">
-                    <img src="/images/start.png" id="playBtn">
-                    <img src="/images/next.png" id="nextBtn">
+                <!-- 按钮 -->
+                <div class="controls" id="controls">
+                    <span><i id="mode" class="iconfont icon-suiji"></i></span>
+                    <div class="play">
+                        <div><i id="pre" class="iconfont icon-shangyishou"></i></div>
+                        <div class="moddle"><i id="play" class="iconfont icon-24gf-play"></i></div>
+                        <div><i id="next" class="iconfont icon-xiayishou1"></i></div>
+                    </div>
                 </div>
-                <div class="jinDuBox">
-                    <div class="timeNow">03:01</div>
-                    <div class="jindutiao"></div>
-                    <div class="timeAll">04:00</div>
+                <div class=" progress">
+                    <div id="start">0:00</div>
+                    <div id="bar"></div>
+                    <div id="end">04:00</div>
                 </div>
+                <section class="audio">
+                    <audio src="" id="audio" controls></audio>
+                </section>
             </div>
             <!-- 底部右-->
+            <!-- 音量/列表 -->
             <div class="foot-right">
-                <a class="labaBox" href="#"><img src="/images/laba.png" alt=""></a>
+                <div><i id="voice" class="iconfont icon-shengyin_shiti"></i></div>
+                <div><i class="iconfont icon-danlieliebiao"></i></div>
             </div>
         </div>
 
