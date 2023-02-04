@@ -188,20 +188,25 @@ function voiceOff() {
 }
 
 // 时长
-function duration() {
-    if (audio.readyState > 0) {
-        var minutes1 = parseInt(audio.duration / 60, 10);
-        var seconds1 = parseInt(audio.duration % 60);
-        var minutes2 = parseInt(audio.duration / 60, 10);
-        var seconds2 = parseInt(audio.duration % 60);
+function currentTime() {
+    var minutes1 = parseInt(audio.currentTime / 60, 10);
+    var seconds1 = parseInt(audio.currentTime % 60);
+    doc.querySelector("#start").innerHTML = minutes1 + ":" + seconds1;
+    if (seconds1 < 10) {
+        doc.querySelector("#start").innerHTML = minutes1 + ":0" + seconds1;
+    } else {
+        doc.querySelector("#start").innerHTML = minutes1 + ":" + seconds1;
     }
-    //时间
-    doc.querySelector("#strat").innerText = minutes1 + ":" + seconds1;
-    doc.querySelector("#end").innerText = minutes2 + ":" + seconds2;
-    alert(minutes1 + ":" + seconds1);
-
 }
-
+function duration() {
+    var minutes2 = parseInt(audio.duration / 60, 10);
+    var seconds2 = parseInt(audio.duration % 60);
+    if (seconds2 < 10) {
+        doc.querySelector("#end").innerHTML = minutes2 + ":0" + seconds2;
+    } else {
+        doc.querySelector("#end").innerHTML = minutes2 + ":" + seconds2;
+    }
+}
 //  全部初始化
 function init() {
     // 网络请求
@@ -232,7 +237,21 @@ function init() {
     doc.querySelector("#voice").onclick = () => {
         voiceControl()
     }
-
+    audio.addEventListener("canplay", () => {
+        duration();
+    })
+    audio.addEventListener("timeupdate", () => {
+        currentTime()
+        doc.querySelector("#jinDu").value = audio.currentTime / audio.duration
+        if (audio.currentTime === audio.duration) {
+            songPause()
+            box.style.animationPlayState = 'paused'
+        }
+    })
+    // 进度拖拽
+    doc.querySelector("#jinDu").addEventListener("mouseup", () => {
+        audio.currentTime = doc.querySelector("#jinDu").value * audio.duration
+    })
 }
 
 init();

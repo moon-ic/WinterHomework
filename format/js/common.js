@@ -10,7 +10,7 @@ function playSong(a) {
                 document.querySelector("#geImg>img").src = json.songs[0].al.picUrl;
                 document.querySelector("#geMing").innerHTML = json.songs[0].name;
                 document.querySelector("#geShou").innerHTML = json.songs[0].ar[0].name;
-                // document.querySelectorAll(".album")[i].innerHTML = json.songs[0].al.name;
+                document.querySelectorAll(".album")[i].innerHTML = json.songs[0].al.name;
             } else {
                 console.log("请求错误" + json.code)
             }
