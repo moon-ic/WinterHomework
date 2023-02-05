@@ -1,12 +1,6 @@
 // 跳转
-function goTo(a) {
-    window.location.href = "/play/play.html?id=" + a;
-}
 function goToCom(a) {
     window.location.href = "/playlistDetailComment/playDetailsComment.html?id=" + a;
-}
-function goToList(a) {
-    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
 }
 
 // 展示歌曲方法
@@ -91,7 +85,7 @@ async function init() {
     // 跳转
     // 歌曲
     for (let i = 0; i < m; i++) {
-        document.querySelectorAll(".song")[i].onclick = () => goTo(theSong[i]);
+        document.querySelectorAll(".song")[i].onclick = () => goToPlay(theSong[i]);
     }
     document.querySelector("#geIndex").onclick = () => {
         goToList(id);

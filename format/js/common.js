@@ -1,9 +1,12 @@
 let doc = document;
-// 顶部
-// 搜索
-function goTo(a) {
+function goToPlay(a) {
     window.location.href = "/play/play.html?id=" + a;
 }
+function goToList(a) {
+    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
+}
+// 顶部
+// 搜索
 // 热搜榜
 function showHotSear() {
     let mainBox = document.querySelector("#searchPage");

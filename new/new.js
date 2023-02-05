@@ -1,7 +1,3 @@
-// 转换的方法
-function goTo(a) {
-    window.location.href = "/play/play.html?id=" + a;
-}
 // 歌盒子
 let mainBox = document.querySelector(".mainBox");
 function showRank() {
@@ -45,7 +41,7 @@ async function getNewList() {
 async function init() {
     const res = await getNewList();
     for (let i = 0; i < m; i++) {
-        document.querySelectorAll(".pic")[i].onclick = () => goTo(theSong[i]);
+        document.querySelectorAll(".pic")[i].onclick = () => goToPlay(theSong[i]);
     }
 }
 

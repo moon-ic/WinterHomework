@@ -1,7 +1,3 @@
-function goTo(a) {
-    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
-}
-
 let leiBtn = document.querySelectorAll(".lei");
 let gedanImg = document.querySelectorAll(".gedanImg");
 let boFang = document.querySelectorAll(".boFang");
@@ -68,7 +64,7 @@ function init() {
         let res = getId(i)
         for (let j = 0; j < 20; j++) {
             document.querySelectorAll(".geDan")[j].onclick = () => {
-                goTo(id[j]);
+                goToPlay(id[j]);
             }
         }
     }

@@ -2,9 +2,6 @@
 function goToCom(a) {
     window.location.href = "/playlistDetailComment/playDetailsComment.html?id=" + a;
 }
-function goToList(a) {
-    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
-}
 
 //获取id参数方法
 function GetUrlParam(name) {

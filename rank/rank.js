@@ -10,14 +10,6 @@ function showRank() {
     mainBox.appendChild(section);
 }
 let theRank = [];
-// 设置歌单跳转
-function goTo1(a) {
-    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
-}
-// 设置歌曲跳转
-function goTo2(a) {
-    window.location.href = "/play/play.html?id=" + a;
-}
 
 //网络请求得到数据
 // 获取排行榜歌单
@@ -90,14 +82,14 @@ async function init() {
     let w = await GetSong(res);
     // 歌单跳转
     for (let i = 0; i < 4; i++) {
-        document.querySelectorAll(".pic img")[i].onclick = () => goTo1(theRank[i]);
+        document.querySelectorAll(".pic img")[i].onclick = () => goToList(theRank[i]);
     }
     for (let i = 0; i < 39; i++) {
-        document.querySelectorAll(".bang img")[i].onclick = () => goTo1(theRank[i]);
+        document.querySelectorAll(".bang img")[i].onclick = () => goToList(theRank[i]);
     }
     // 歌曲跳转
     for (let i = 0; i < 20; i++) {
-        document.querySelectorAll(".song")[i].onclick = () => goTo2(theSong[i]);
+        document.querySelectorAll(".song")[i].onclick = () => goToPlay(theSong[i]);
     }
 }
 

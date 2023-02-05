@@ -1,7 +1,3 @@
-function goTo(a) {
-    window.location.href = "/play/play.html?id=" + a;
-}
-
 function showSear() {
     let mainBox = document.querySelector(".searchMain");
     let section = document.createElement('div');
@@ -42,7 +38,7 @@ async function init() {
     // 跳转
     // 歌曲
     for (let i = 0; i < m; i++) {
-        document.querySelectorAll(".searchSong")[i].onclick = () => goTo(id[i]);
+        document.querySelectorAll(".searchSong")[i].onclick = () => goToPlay(id[i]);
     }
 }
 

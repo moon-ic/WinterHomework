@@ -1,6 +1,3 @@
-function goTo(a) {
-    window.location.href = "/playlistDetails/playlistDetails.html?id=" + a;
-}
 //1——网络请求部分
 // 推荐歌单
 let tui = document.querySelectorAll(".tui");
@@ -82,7 +79,7 @@ async function init() {
     getNewList();
     getBanner();
     for (let i = 0; i < 10; i++) {
-        tui[i].onclick = () => goTo(id[i]);
+        tui[i].onclick = () => goToList(id[i]);
     }
     const res = await getNewList();
     for (let i = 0; i < newImg.length; i++) {
