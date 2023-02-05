@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/format/css/common.css">
+    <link rel="stylesheet" href="/format/css/base.css">
+    <link rel="stylesheet" href="./playlistDetailsC.css">
+    <link rel="stylesheet" href="/icon/iconfont.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <img src="/images/header.png" id="logoImg">
+            <div class="searchBox">
+                <a href="" id="searchLogo"><img src="/images/searchlogo.png"></a>
+                <input type="text" placeholder="" id="searchInput">
+                <div class="clearfix"></div><!-- 清除浮动 -->
+            </div>
+            <div class="idBox">
+                <a href="/personalDetail/personalDetail.html" id="touXiang"><img src="/images/头像.JPG"></a>
+                <div id="niCheng">anchen</div>
+            </div>
+            <div class="clearfix"></div><!-- 清除浮动 -->
+        </div>
+
+        <!-- 主页面 -->
+        <div class="main">
+            <!-- 左导航 -->
+            <div class="left">
+                <div class="shellBox">
+                    <a href="/index/index.html" class="shell">发现音乐</a>
+                    <a href="#" class="shell"><img src="/images/love.png" id="love" alt="">我喜欢的音乐</a>
+                    <a href="#" class="shell"><img src="/images/music.png" id="music">歌单1</a>
+                </div>
+            </div>
+
+            <!-- 右页面 -->
+            <div class="right">
+                <!-- 搜索 -->
+                <div id="searchPage">
+                    <div id="resou">热搜榜</div>
+                    <a href="#" class="theSong">1-666</a>
+                </div>
+                <!-- 个人 -->
+                <div id="meBox">
+
+                </div>
+                <div class="clearfix"></div><!-- 清除浮动 -->
+                <div class="introduceBox">
+                    <img src="/images/index3.png" alt="">
+                    <div class="detail">
+                        <div class="names">66</div>
+                        <div class="from"></div>
+                        <div class="btnsBox">
+                            <div id="playBtns">&gt播放全部</div>
+                            <div id="shouBtns">+</div>
+                        </div>
+                        <div class="biaoqian">标签:</div>
+                        <div class="small">
+                            <div class="songCount">歌曲:</div>
+                            <div class="count">播放:</div>
+                        </div>
+                        <div class="des">简介:</div>
+                    </div>
+                </div>
+                <div class="songtitle">
+                    <div id="geIndex">歌曲列表</div>
+                    <div id="comment" class="active">评论</div>
+                </div>
+                <div class="commentBox">
+                    <textarea class="write">
+
+                    </textarea>
+                    <div class="comTitle">
+                        <div class="comP">最新评论</div>
+                        <div id="comBtn">评论</div>
+                    </div>
+                    <div class="display">
+
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div><!-- 清除浮动 -->
+            <div class="volume">
+                <input id="volume" type="range" min="0" max="1" step="0.05" />
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <!-- 底部左 -->
+            <!-- 歌曲信息 -->
+            <div class="foot-left">
+                <div id="geImg">
+                    <div class="back">&lt</div>
+                    <img src="/images/index1.png">
+                </div>
+                <div id="imf">
+                    <div id="geMing">歌名</div>
+                    <div id="geShou">歌手</div>
+                </div>
+                <div class="clearfix"></div><!-- 清除浮动 -->
+            </div>
+            <!-- 底部中 -->
+            <!-- 播放盒子 -->
+            <div class="foot-center">
+                <!-- 按钮 -->
+                <div class="controls" id="controls">
+                    <div class="play">
+                        <div><i id="pre" class="iconfont icon-shangyishou"></i></div>
+                        <div class="moddle"><i id="play" class="iconfont icon-24gf-play"></i></div>
+                        <div><i id="next" class="iconfont icon-xiayishou1"></i></div>
+                    </div>
+                </div>
+                <div class=" progress">
+                    <div id="start">0:00</div>
+                    <div id="bar">
+                        <input id="jinDu" type="range" min="0" max="1" step="0.01" />
+                    </div>
+                    <div id="end">04:00</div>
+                </div>
+                <section class="audio">
+                    <audio src="" id="audio" controls preload="auto"></audio>
+                </section>
+            </div>
+            <!-- 底部右-->
+            <!-- 音量/列表 -->
+            <div class="foot-right">
+                <div><i id="voice" class="iconfont icon-shengyin_shiti"></i></div>
+                <div><i class="iconfont icon-danlieliebiao"></i></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./playlistDetailsC.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+/* 顶部盒子 */
+.introduceBox {
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 215px;
+    width: 700px;
+    display: flex;
+}
+
+.introduceBox>img {
+    width: 170px;
+    height: 170px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* 顶部盒子右侧 */
+.detail {
+    width: 515px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.names {
+    height: 50px;
+    width: 515px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.from {
+    height: 30px;
+    line-height: 30px;
+    width: 515px;
+    color: #507daf;
+}
+
+.btnsBox {
+    height: 32px;
+    width: 130px;
+    color: #fff;
+    letter-spacing: 0.1em;
+    background-color: #ec4141;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+}
+
+#playBtns {
+    height: 30px;
+    /* line-height: 30px; */
+    text-align: center;
+    width: 100px;
+    border-right: #ee5454 solid 1px;
+    padding-top: 7.5px;
+}
+
+#shouBtns {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+    font-size: 25px;
+    font-weight: 100;
+    /* background-color: azure; */
+}
+
+.biaoqian {
+    height: 20px;
+    width: 515px;
+    margin-top: 15px;
+}
+
+.small {
+    height: 20px;
+    line-height: 20px;
+    width: 515px;
+    display: flex;
+}
+
+.des {
+    height: 50px;
+    width: 515px;
+    overflow: scroll;
+}
+
+.songCount {
+    width: 100px;
+}
+
+/* 底页 */
+/* 导航 */
+.songtitle {
+    height: 40px;
+    line-height: 40px;
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#geIndex {
+    height: 40px;
+    width: 60px;
+    text-align: center;
+}
+
+#comment {
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 37px;
+    border-bottom: 3px solid #ec4141;
+}
+
+/* 评论 */
+.commentBox {
+    width: 700px;
+    height: 115px;
+    margin: 0 auto;
+}
+
+.write {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+    height: 65px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+}
+
+.comTitle {
+    margin-top: 20px;
+    height: 30px;
+    width: 700px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.1em;
+}
+
+.comP {
+    font-weight: 600;
+    height: 30px;
+    line-height: 30px;
+    width: 150px;
+    padding-left: 10px;
+}
+
+#comBtn {
+    text-align: center;
+    line-height: 25px;
+    font-size: 12px;
+    height: 25px;
+    width: 50px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+#comBtn:hover {
+    background-color: #fafafa;
+}
+
+.display {
+    margin-top: 10px;
+    width: 700px;
+    height: 200px;
+}
+
+.com {
+    padding-top: 12.5px;
+    width: 700px;
+    height: 70px;
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+.Img{
+    margin-right: 15px;
+}
+.Img>img {
+    width: 35px;
+    height: 35px;
+    border-radius: 17.5px;
+}
+
+.leftBox_ {
+    height: 47.5px;
+    color: #939393;
+}
+
+.comId {
+    color: #507daf;
+}
+
+.timeup {
+    height: 20px;
+}
+
+.commentAnswer {
+    height: 47.5px;
+}
+
+.answer {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+.answer>img {
+    width: 15px;
+    height: 15px;
+}

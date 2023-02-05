@@ -1,0 +1,52 @@
+.searchMain {
+    width: 680px;
+    margin: 0 auto;
+}
+
+.searchSong {
+    width: 680px;
+    height: 35px;
+    margin: 1px 0;
+    display: flex;
+    color: #989898;
+    background-color: #fafafa;
+}
+
+.searchSong:hover {
+    background-color: #e0e0e0;
+}
+
+.searchMain :nth-child(1):hover {
+    background-color: #fff;
+}
+
+.searchMain :nth-child(1) {
+    background-color: #fff;
+}
+
+.searchNums {
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.searTitle {
+    height: 35px;
+    padding-left: 10px;
+    line-height: 35px;
+    width: 270px;
+    color: #507daf;
+}
+
+.searSinger {
+    height: 35px;
+    line-height: 35px;
+    width: 110px;
+}
+
+.searAlbum {
+    height: 35px;
+    line-height: 35px;
+    width: 240px
+}
