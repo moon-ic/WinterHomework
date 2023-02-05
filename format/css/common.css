@@ -15,38 +15,6 @@
     float: left;
 }
 
-.searchBox {
-    float: left;
-    height: 100%;
-    background-color: #e33e3e;
-    margin-left: 100px;
-    width: 150px;
-    height: 25px;
-    margin-top: 15px;
-    border-radius: 12.5px;
-}
-
-#searchLogo {
-    margin-top: 2.8px;
-    margin-left: 10px;
-    overflow: hidden;
-    float: left;
-}
-
-#searchLogo>img {
-    overflow: hidden;
-    width: 18px;
-}
-
-#searchInput {
-    float: right;
-    overflow: hidden;
-    width: 118px;
-    border-radius: 12.5px;
-    height: 100%;
-    background-color: #e33e3e;
-}
-
 .idBox {
     background-color: lightblue;
     float: right;
@@ -125,15 +93,51 @@
 }
 
 /* 1-搜索 */
+
+.searchBox {
+    float: left;
+    height: 100%;
+    background-color: #e33e3e;
+    margin-left: 100px;
+    width: 150px;
+    height: 25px;
+    margin-top: 15px;
+    border-radius: 12.5px;
+}
+
+#searchLogo {
+    margin-top: 2.8px;
+    margin-left: 10px;
+    overflow: hidden;
+    float: left;
+}
+
+#searchLogo>img {
+    overflow: hidden;
+    width: 18px;
+}
+
+#searchInput {
+    float: right;
+    overflow: hidden;
+    width: 118px;
+    border-radius: 12.5px;
+    height: 100%;
+    /* background-color: #e33e3e; */
+    background-color: black;
+}
+
 #searchPage {
     position: fixed;
     margin-top: 10px;
     margin-left: 20px;
     width: 320px;
     height: 480px;
-    border-radius: 10px;
-    box-shadow: #e0e0e0 0 0 10px;
-    display: none;
+    border-radius: 5px;
+    box-shadow: #e0e0e0 0 0 5px;
+    background-color: #fff;
+    overflow: scroll;
+    z-index: -1;
 }
 
 #resou {
@@ -144,15 +148,32 @@
     color: #e0e0e0;
 }
 
-.theSong {
-    height: 40px;
-    line-height: 40px;
-    border-radius: 5px;
-    padding-left: 20px;
+.theSearHot {
+    height: 45px;
+    display: flex;
 }
 
-.theSong:hover {
+.theSearHot:hover {
     background-color: #fafafa;
+}
+
+.searNum {
+    margin: 0 20px;
+    height: 45px;
+    width: 20px;
+    line-height: 45px;
+    text-align: center;
+    color: #d2d2d2;
+}
+
+.searName {
+    height: 25px;
+    line-height: 25px;
+}
+
+.searCon {
+    height: 20px;
+    color: #acacac;
 }
 
 /* 2-登录位置 */
