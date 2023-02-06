@@ -64,7 +64,7 @@ function init() {
         let res = getId(i)
         for (let j = 0; j < 20; j++) {
             document.querySelectorAll(".geDan")[j].onclick = () => {
-                goToPlay(id[j]);
+                goToList(id[j]);
             }
         }
     }

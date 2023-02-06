@@ -16,7 +16,7 @@
 }
 
 .idBox {
-    background-color: lightblue;
+    color: #fbd9d9;
     float: right;
     margin-right: 250px;
     width: 150px;
@@ -64,15 +64,26 @@
     margin-top: 13px;
 }
 
-.shell {
+.listTitle {
     margin: 0 auto;
     padding-left: 5px;
     border-radius: 3px;
     width: 160px;
-    height: 32px;
-    line-height: 32px;
-    font-size: 13px;
-    letter-spacing: 0.1em;
+    height: 30px;
+    line-height: 30px;
+    color: #989898;
+    letter-spacing: 0.05em;
+}
+
+.shell {
+    /* background-color: aliceblue; */
+    margin: 0 auto;
+    padding-left: 5px;
+    border-radius: 3px;
+    width: 160px;
+    line-height: 30px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
 }
 
 .shell:hover {
@@ -81,7 +92,7 @@
 
 .shell>img {
     width: 20px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 /* 主体*/
@@ -118,13 +129,20 @@
 }
 
 #searchInput {
+    color: #fff;
     float: right;
     overflow: hidden;
     width: 118px;
+    font-size: 12px;
     border-radius: 12.5px;
     height: 100%;
-    /* background-color: #e33e3e; */
-    background-color: black;
+    background-color: #e33e3e;
+    /* background-color: black; */
+}
+
+#searchInput::-webkit-input-placeholder {
+    color: #e26c6c;
+    font-size: 12px;
 }
 
 #searchPage {

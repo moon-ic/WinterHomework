@@ -1,3 +1,11 @@
+// 获取参数
+function GetUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURI(r[2]); return null;
+}
+const keywords = GetUrlParam("keywords");
+
 function showSear() {
     let mainBox = document.querySelector(".searchMain");
     let section = document.createElement('div');
@@ -12,8 +20,8 @@ function showSear() {
 
 let id = [];
 let m;
-async function getSearch() {
-    let data = await fetch("http://why.vin:2023/search?keywords=海阔天空")
+async function getSearch(a) {
+    let data = await fetch("http://why.vin:2023/search?keywords=" + a)
     let json = await data.json()
     if (json.code === 200) {
         for (let i = 0; i < json.result.songs.length; i++) {
@@ -34,7 +42,7 @@ async function getSearch() {
 
 // 初始化
 async function init() {
-    let res = await getSearch();
+    let res = await getSearch(keywords);
     // 跳转
     // 歌曲
     for (let i = 0; i < m; i++) {

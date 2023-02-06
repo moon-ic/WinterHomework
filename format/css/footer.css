@@ -66,6 +66,22 @@
     overflow: hidden;
 }
 
+.back {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: #e0e0e0;
+}
+
+.back:hover {
+    color: #fff;
+}
+
 /* 下-中 */
 .foot-center {
     width: 390px;

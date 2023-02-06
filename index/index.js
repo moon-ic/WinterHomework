@@ -1,4 +1,5 @@
 //1——网络请求部分
+console.log(localStorage.cookie);
 // 推荐歌单
 let tui = document.querySelectorAll(".tui");
 let tuiPic = document.querySelectorAll(".tuiImg");
