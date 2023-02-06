@@ -1,8 +1,42 @@
-.container {
+.containers {
     margin: 0 auto;
     margin-top: 10px;
     width: 320px;
     height: 480px;
-    box-shadow: #666 0 0 10px;
+    box-shadow: #e0e0e0 0 0 10px;
     background-color: #fff;
+    padding-top: 75px;
+}
+
+.title {
+    width: 320px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 23px;
+    letter-spacing: 0.1em;
+}
+
+.img {
+    margin-top: 10px;
+    width: 320px;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+}
+
+#qrImg {
+    width: 190px;
+    height: 190px;
+}
+
+.P {
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    letter-spacing: 0.1em;
+}
+
+.active {
+    color: #207dc3;
 }
