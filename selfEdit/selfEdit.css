@@ -1,0 +1,159 @@
+#edit {
+    display: flex;
+    width: 700px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* 左表单 */
+.leftEdit {
+    width: 500px;
+    height: 100%;
+    letter-spacing: 0.2em;
+    font-size: 13px;
+}
+
+.editTitle {
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    width: 500px;
+}
+
+.nickname {
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.nickname>input {
+    height: 25px;
+    width: 400px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    color: #989898;
+}
+
+.selfInfo {
+    width: 500px;
+    height: 80px;
+    margin-top: 20px;
+}
+
+.selfInfo>textarea {
+    height: 70px;
+    width: 400px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    color: #989898;
+    outline: none;
+}
+
+.gender {
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.birth {
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.birth select {
+    height: 20px;
+    width: 120px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+
+}
+
+.position {
+    width: 500px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+#province {
+    height: 20px;
+    width: 120px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+#city {
+    height: 20px;
+    width: 120px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.editBtnBox {
+    display: flex;
+    padding-left: 50px;
+    margin-top: 40px;
+}
+
+#editUp {
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    letter-spacing: 0.5em;
+    color: #fffbfb;
+    text-align: center;
+    background-color: #f6a0a0;
+    margin-right: 20px;
+}
+
+#editUp:hover {
+    color: #fff;
+    background-color: #ec4141;
+}
+
+#editQuit {
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    letter-spacing: 0.5em;
+    color: #989898;
+    text-align: center;
+    background-color: #fff;
+    border: #989898 solid 1px;
+}
+
+#editQuit:hover {
+    background-color: #fafafa;
+}
+
+/* 右头像 */
+.rightEdit {
+    width: 150px;
+    height: 200px;
+    margin-left: 30px;
+    margin-top: 70px;
+}
+
+#selfImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 3px;
+}
+
+.imgEdit {
+    margin-left: 35px;
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    line-height: 30px;
+    border-radius: 15px;
+    letter-spacing: 0.1em;
+    color: #989898;
+    text-align: center;
+    background-color: #fff;
+    border: #989898 solid 1px;
+}
