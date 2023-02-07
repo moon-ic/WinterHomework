@@ -204,6 +204,7 @@
     border-radius: 5px;
     box-shadow: #989898 0 0 5px;
     padding-top: 15px;
+    margin-top: 10px;
     z-index: -1;
 }
 

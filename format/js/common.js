@@ -35,15 +35,19 @@ async function getInfo(a) {
     let data = await fetch("http://why.vin:2023/user/detail?uid=" + a);
     let json = await data.json()
     let playlistCount;
+    let uImg;
+    let uName;
     if (json.code === 200) {
         //如果正确就调用显示数据的方法
+        uImg = json.profile.avatarUrl;
+        uName = json.profile.nickname;
         doc.querySelector("#touXiang>img").src = json.profile.avatarUrl;
         doc.querySelector("#niCheng").innerHTML = json.profile.nickname;
         playlistCount = json.profile.playlistCount;
     } else {
         console.log("请求错误" + json.code)
     }
-    return { playlistCount };
+    return { playlistCount, uImg, uName };
 }
 
 // 3-左侧歌单
@@ -161,11 +165,12 @@ function playSong(a) {
 }
 
 // 初始化
-async function init() {
+async function initAll() {
     // 信息
     let res0 = await getUerId();
     let userId = res0.userId;
-    userId = 32953014
+    console.log(userId);
+    // userId = 32953014
     // 实验太多次我的id遭封了orz
     let res1 = await getInfo(userId);
     let res2 = await getUList(userId);
@@ -222,4 +227,4 @@ async function init() {
     // playSong(id);
 }
 
-init();
+initAll();
