@@ -196,13 +196,40 @@
 
 /* 2-登录位置 */
 #meBox {
-    display: flex;
+    position: absolute;
+    background-color: #fff;
     margin-left: 280px;
     width: 255px;
-    height: 370px;
+    height: 80px;
     border-radius: 5px;
-    box-shadow: #e0e0e0 0 0 10px;
-    display: none;
+    box-shadow: #989898 0 0 5px;
+    padding-top: 15px;
+    z-index: -1;
+}
+
+#settingBtn {
+    color: #989898;
+    width: 255px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#settingBtn:hover {
+    background-color: #fafafa;
+}
+
+#quitBtn:hover {
+    background-color: #fafafa;
+}
+
+#quitBtn {
+    color: #989898;
+    width: 255px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
 }
 
 /* 底部 */

@@ -11,19 +11,6 @@ function GetUrlParam(name) {
 }
 const id = GetUrlParam("id");
 
-async function getUerId() {
-    let data = await fetch("http://why.vin:2023/user/account");
-    let json = await data.json()
-    let userId;
-    if (json.code === 200) {
-        //如果正确就调用显示数据的方法
-        userId = json.account.id;
-        console.log(userId);
-    } else {
-        console.log("请求错误" + json.code)
-    }
-    return { userId };
-}
 // 展示详情
 async function getplayList() {
     let data = await fetch("http://why.vin:2023/playlist/detail?id=" + id)
@@ -86,7 +73,7 @@ async function commentIt(id, con) {
     if (json.code === 200) {
 
     } else {
-        console.log("请求错误" + json.code)
+        alert("网络不好，请稍后再试")
     }
 }
 

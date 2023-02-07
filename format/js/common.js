@@ -177,6 +177,18 @@ async function init() {
             goToList(playlistId[i]);
         }
     }
+    // 登录与信息
+    doc.querySelector(".idBox").addEventListener("mouseover", () => {
+        doc.querySelector("#meBox").style.zIndex = 1000;
+    })
+    doc.querySelector("#meBox").addEventListener("mouseover", () => {
+        doc.querySelector("#meBox").style.zIndex = 1000;
+        // 点击跳转
+
+    })
+    doc.querySelector("#meBox").addEventListener("mouseout", () => {
+        doc.querySelector("#meBox").style.zIndex = -1;
+    })
     // 搜索
     placehoder()
     doc.querySelector("#searchInput").addEventListener("input", () => {
