@@ -11,6 +11,19 @@ function GetUrlParam(name) {
 }
 const id = GetUrlParam("id");
 
+async function getUerId() {
+    let data = await fetch("http://why.vin:2023/user/account");
+    let json = await data.json()
+    let userId;
+    if (json.code === 200) {
+        //如果正确就调用显示数据的方法
+        userId = json.account.id;
+        console.log(userId);
+    } else {
+        console.log("请求错误" + json.code)
+    }
+    return { userId };
+}
 // 展示详情
 async function getplayList() {
     let data = await fetch("http://why.vin:2023/playlist/detail?id=" + id)
@@ -29,7 +42,7 @@ async function getplayList() {
     }
 }
 // 展示评论
-let mainBox = document.querySelector(".display");
+let mainBox01 = document.querySelector(".display");
 function showCom() {
     let section = document.createElement('div');
     section.className = "com";
@@ -47,7 +60,7 @@ function showCom() {
             <img src="/images/answer.png" alt="">
         </div>
    `
-    mainBox.appendChild(section);
+    mainBox01.appendChild(section);
 }
 async function getComment() {
     let data = await fetch("http://why.vin:2023/comment/playlist?id=" + id)
@@ -65,20 +78,18 @@ async function getComment() {
         console.log("请求错误" + json.code)
     }
 }
+
 //进行评论 
-let con = document.querySelector(".write").innerText;
-async function commentIt() {
-    let data = await fetch("/comment?t=1&type=2&id=" + id + "&content=" + con)
+async function commentIt(id, con) {
+    let data = await fetch("http://why.vin:2023/comment?t=1&type=2&id=" + id + "&content=" + con)
     let json = await data.json()
     if (json.code === 200) {
-        showCom();
-        // document.querySelectorAll(".comId")[i].innerText = json.comments[i].user.nickname + ": ";
-        document.querySelectorAll(".commentAnswer")[i].innerText = con;
-        // document.querySelectorAll(".Img>img")[i].src = json.comments[i].user.avatarUrl;
+
     } else {
         console.log("请求错误" + json.code)
     }
 }
+
 //初始化
 async function init() {
     // 展示
@@ -91,8 +102,12 @@ async function init() {
     document.querySelector("#comment").onclick = () => {
         goToCom(id);
     }
+    // 评论
     document.querySelector("#comBtn").onclick = () => {
-
+        let con = document.querySelector(".write").value;
+        console.log(con);
+        commentIt(id, con);
+        document.querySelector(".write").value = null;
     }
 }
 

@@ -48,12 +48,12 @@ async function getInfo(a) {
 
 // 3-左侧歌单
 // 歌盒子
-let mainBox = document.querySelector(".shellBox");
+let shellBox = document.querySelector(".shellBox");
 function showShell() {
     let section = document.createElement('div');
     section.className = "shell";
     section.innerHTML = `<img src="/images/music.png" class="music">歌单1`
-    mainBox.appendChild(section);
+    shellBox.appendChild(section);
 }
 
 async function getUList(a) {
@@ -166,6 +166,7 @@ async function init() {
     let res0 = await getUerId();
     let userId = res0.userId;
     userId = 32953014
+    // 实验太多次我的id遭封了orz
     let res1 = await getInfo(userId);
     let res2 = await getUList(userId);
     // 个人歌单
