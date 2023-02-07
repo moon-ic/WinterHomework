@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网易云音乐</title>
     <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/index/index.css">
     <link rel="stylesheet" href="/format/css/base.css">
     <link rel="stylesheet" href="/format/css/common.css">
-    <link rel="stylesheet" href="/index/index.css">
     <link rel="stylesheet" href="/format/css/indexTop.css">
+    <link rel="stylesheet" href="/format/css/footer.css">
+    <link rel="stylesheet" href="/icon/iconfont.css">
 </head>
 
 <body>
@@ -302,13 +304,20 @@
                 </div>
             </div>
             <div class="clearfix"></div><!-- 清除浮动 -->
+            <div class="volume">
+                <input id="volume" type="range" min="0" max="1" step="0.05" />
+            </div>
         </div>
 
         <!-- 底部 -->
         <div class="footer">
             <!-- 底部左 -->
+            <!-- 歌曲信息 -->
             <div class="foot-left">
-                <div id="geImg"><img src="/images/index1.png"></div>
+                <div id="geImg">
+                    <div class="back">&lt</div>
+                    <img src="/images/index1.png">
+                </div>
                 <div id="imf">
                     <div id="geMing">歌名</div>
                     <div id="geShou">歌手</div>
@@ -316,26 +325,38 @@
                 <div class="clearfix"></div><!-- 清除浮动 -->
             </div>
             <!-- 底部中 -->
+            <!-- 播放盒子 -->
             <div class="foot-center">
-                <div class="playBox">
-                    <img src="/images/past.png" id="pastBtn">
-                    <img src="/images/start.png" id="playBtn">
-                    <img src="/images/next.png" id="nextBtn">
+                <!-- 按钮 -->
+                <div class="controls" id="controls">
+                    <div class="play">
+                        <div><i id="pre" class="iconfont icon-shangyishou"></i></div>
+                        <div class="moddle"><i id="play" class="iconfont icon-24gf-play"></i></div>
+                        <div><i id="next" class="iconfont icon-xiayishou1"></i></div>
+                    </div>
                 </div>
-                <div class="jinDuBox">
-                    <div class="timeNow">03:01</div>
-                    <div class="jindutiao"></div>
-                    <div class="timeAll">04:00</div>
+                <div class=" progress">
+                    <div id="start">0:00</div>
+                    <div id="bar">
+                        <input id="jinDu" type="range" min="0" max="1" step="0.01" />
+                    </div>
+                    <div id="end">04:00</div>
                 </div>
+                <section class="audio">
+                    <audio src="" id="audio" controls preload="auto"></audio>
+                </section>
             </div>
             <!-- 底部右-->
+            <!-- 音量/列表 -->
             <div class="foot-right">
-                <a class="labaBox" href="#"><img src="/images/laba.png" alt=""></a>
+                <div><i id="voice" class="iconfont icon-shengyin_shiti"></i></div>
+                <div><i class="iconfont icon-danlieliebiao"></i></div>
             </div>
         </div>
+
     </div>
-    <script src="./index.js"></script>
     <script src="/format/js/common.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

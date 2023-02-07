@@ -41,7 +41,7 @@ async function login() {
             alert('授权登录成功');
             await this.getLoginStatus(statusRes.cookie);
             localStorage.setItem('cookie', statusRes.cookie);
-            window.location.href = "/index/index.html";
+            window.location.href = "../index/index.html";
         }
     }, 3000)
 }

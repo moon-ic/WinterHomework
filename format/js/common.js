@@ -170,7 +170,7 @@ async function initAll() {
     let res0 = await getUerId();
     let userId = res0.userId;
     console.log(userId);
-    // userId = 32953014
+    userId = 32953014
     // 实验太多次我的id遭封了orz
     let res1 = await getInfo(userId);
     let res2 = await getUList(userId);
@@ -194,6 +194,7 @@ async function initAll() {
     doc.querySelector("#meBox").addEventListener("mouseout", () => {
         doc.querySelector("#meBox").style.zIndex = -1;
     })
+
     // 搜索
     placehoder()
     doc.querySelector("#searchInput").addEventListener("input", () => {

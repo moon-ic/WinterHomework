@@ -138,7 +138,7 @@ function commit(gender, birthday, nickname, province, city, signature) {
             //判断网络请求返回的数据是否正确
             if (json.code === 200) {
                 // 如果正确就调用显示数据的方法
-                window.location.href = "/index/index.html";
+                window.location.href = "../index/index.html";
             } else {
                 console.log("请求错误" + json.code)
             }

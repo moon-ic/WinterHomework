@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网易云音乐</title>
     <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/format/css/indexTop.css">
-    <link rel="stylesheet" href="/format/css/common.css">
-    <link rel="stylesheet" href="/format/css/base.css">
     <link rel="stylesheet" href="./new.css">
+    <link rel="stylesheet" href="/format/css/base.css">
+    <link rel="stylesheet" href="/format/css/common.css">
+    <link rel="stylesheet" href="/format/css/indexTop.css">
+    <link rel="stylesheet" href="/format/css/footer.css">
+    <link rel="stylesheet" href="/icon/iconfont.css">
 </head>
 
 <body>
@@ -18,13 +20,15 @@
         <!-- 头部 -->
         <div class="header">
             <img src="/images/header.png" id="logoImg">
+            <!-- 搜索 -->
             <div class="searchBox">
                 <a href="" id="searchLogo"><img src="/images/searchlogo.png"></a>
                 <input type="text" placeholder="" id="searchInput">
                 <div class="clearfix"></div><!-- 清除浮动 -->
             </div>
+            <!-- 个人信息 -->
             <div class="idBox">
-                <a href="/personalDetail/personalDetail.html" id="touXiang"><img src="/images/头像.JPG"></a>
+                <div id="touXiang"><img src="/images/头像.JPG"></div>
                 <div id="niCheng">anchen</div>
             </div>
             <div class="clearfix"></div><!-- 清除浮动 -->
@@ -36,8 +40,7 @@
             <div class="left">
                 <div class="shellBox">
                     <a href="#" class="shell">发现音乐</a>
-                    <a href="#" class="shell"><img src="/images/love.png" id="love" alt="">我喜欢的音乐</a>
-                    <a href="#" class="shell"><img src="/images/music.png" id="music">歌单1</a>
+                    <div class="listTitle">我的音乐</div>
                 </div>
             </div>
 
@@ -46,11 +49,11 @@
                 <!-- 搜索 -->
                 <div id="searchPage">
                     <div id="resou">热搜榜</div>
-                    <a href="#" class="theSong">1-666</a>
                 </div>
                 <!-- 个人 -->
                 <div id="meBox">
-
+                    <a href="/selfEdit/selfEdit.html" id="settingBtn">个人信息设置</a>
+                    <div id="quitBtn">退出登录</div>
                 </div>
                 <div class="indexTop">
                     <a href="/index/index.html" class="index">个性推荐</a>
@@ -103,6 +106,7 @@
             </div>
         </div>
     </div>
+    <script src="/format/js/common.js"></script>
     <script src="./new.js"></script>
 </body>
 
